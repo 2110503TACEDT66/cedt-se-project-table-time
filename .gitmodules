@@ -1,0 +1,9 @@
+[submodule "redrice-backend-go"]
+	path = redrice-backend-go
+	url = https://github.com/punchanabu/redrice-backend-go
+[submodule "redrice-chat"]
+	path = redrice-chat
+	url = https://github.com/punchanabu/redrice-chat
+[submodule "redrice-frontend"]
+	path = redrice-frontend
+	url = https://github.com/punchanabu/redrice-frontend
