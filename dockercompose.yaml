@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  nextjs:
+    container_name: nextjs
+    build: ./path/to/nextjs
+    ports:
+      - "3000:3000"
+    environment:
+      - NEXTAUTH_URL=http://localhost:3000/
+      - NEXTAUTH_SECRET=Y3W6xJbeVZuczNEAZaaTshtmZ84hPGQC8y/Rpq8KKQA=
+      - NEXTAUTH_INTERNAL_URL=http://localhost:3000/
+      - NEXT_PUBLIC_SOCKET_URL=http://localhost:6969/
+      - NEXT_PUBLIC_BACKEND_URL=http://localhost:8080/
+
+  nodejs:
+    container_name: nodejs
+    build: ./path/to/nodejs
+    ports:
+      - "6969:6969"
+    environment:
+      - PORT=6969
+      - DB_CONN=postgresql://punchanabu:G3FhBSx6ufDX@ep-jolly-union-17203829-pooler.ap-southeast-1.aws.neon.tech/redrice-dev?sslmode=require
+      - JWT_SECRET=gay
+
+  golang:
+    container_name: golang
+    build: ./path/to/golang
+    ports:
+      - "8080:8080"
+    environment:
+      - BUCKET_ACCESS_KEY=HCUMLB3OJOWSP8IOY5QU
+      - BUCKET_ENDPOINT=s3.inspace.cloud
+      - BUCKET_REGION=us-east-1
+      - BUCKET_SECRET_ACCESS_KEY=ITJ4f67nqe4Q37AXj7hD6jMd8w4qdBPMyUxlxcKO
+      - DB_CONN=postgresql://punchanabu:G3FhBSx6ufDX@ep-jolly-union-17203829-pooler.ap-southeast-1.aws.neon.tech/redrice-dev?sslmode=require
+      - PORT=8080
+      - JWT_SECRET=gay
